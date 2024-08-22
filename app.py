@@ -21,6 +21,7 @@ st.session_state['dimensao'] = [
   'Order Year', 'Order Month', 'region', 'state', 'city', 'product_category',
   'product_sub_category'
 ]
+st.session_state['dimensao_tempo'] = ['Ship Year', 'Ship Month', 'Order Year', 'Order Month',]
 st.session_state['medida'] = ['sales', 'profit', 'order_quantity']
 st.session_state['agregador'] = ['sum', 'mean', 'count', 'min', 'max']
 st.title('Gestão do Conhecimento')
@@ -29,7 +30,9 @@ pg = st.navigation(
   {
     "Introdução": [
       st.Page(page='introducao/tabela.py', title="Tabela", icon=":material/house:"),
-      st.Page(page='introducao/cubo.py', title="Cubo", icon=":material/help:")
+      st.Page(page='introducao/cubo.py', title="Cubo", icon=":material/help:"),
+      st.Page(page='introducao/dashboard.py', title="Dashboard", icon=":material/help:"),
+      st.Page(page='introducao/visualizacao.py', title="Vizualização", icon=":material/help:")
     ]
   }
 )
