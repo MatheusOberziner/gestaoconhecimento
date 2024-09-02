@@ -9,4 +9,4 @@ pyg_app = StreamlitRenderer(
   ]
 )
 
-# pyg_app.explorer()
+pyg_app.explorer()
