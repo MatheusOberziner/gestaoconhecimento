@@ -17,9 +17,8 @@ def load_database():
 st.set_page_config(page_title="Gestão do Conhecimento", layout="wide")
 st.session_state['df'] = load_database()
 st.session_state['dimensao'] = [
-  'customer_segment', 'order_priority', 'ship_mode', 'Ship Year', 'Ship Month',
-  'Order Year', 'Order Month', 'region', 'state', 'city', 'product_category',
-  'product_sub_category'
+  'customer_segment', 'order_priority', 'ship_mode', 'region', 
+  'state', 'city', 'product_category', 'product_sub_category'
 ]
 st.session_state['dimensao_tempo'] = ['Ship Year', 'Ship Month', 'Order Year', 'Order Month',]
 st.session_state['medida'] = ['sales', 'profit', 'order_quantity']

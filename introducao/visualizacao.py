@@ -48,7 +48,7 @@ if len(meds) > 0:
             st.text('Não pode haver valores negativos')
     st.text('Visualização de Dimensão')
     gr = st.session_state['df'].groupby(dims)[meds[0]].sum().reset_index()
-    with st.expander(label='mostrar tabela', expanded=False):
+    with st.expander(label='Mostrar Tabela', expanded=False):
         st.dataframe(
             gr,
             hide_index=True,
