@@ -11,6 +11,7 @@ def load_database():
   df['Order Month'] = df['order_date'].dt.month
   df['Ship Year'] = df['ship_date'].dt.year
   df['Ship Month'] = df['ship_date'].dt.month
+  df['Order Date Month'] = df['order_date'].apply(lambda x : x.strftime("%Y-%m-01"))
   df = df.drop(columns=['row_id', 'order_id', 'customer_age', 'number_of_records'])
   return df
 
@@ -32,6 +33,16 @@ pg = st.navigation(
       st.Page(page='introducao/cubo.py', title="Cubo", icon=":material/help:"),
       st.Page(page='introducao/dashboard.py', title="Dashboard", icon=":material/help:"),
       st.Page(page='introducao/visualizacao.py', title="Vizualização", icon=":material/help:")
+    ],
+    "Visualização": [
+        st.Page(page='visualizacao/descritiva.py', title='Análise Descritiva',
+                icon=':material/house:'),
+        st.Page(page='visualizacao/diagnostica.py', title='Análise Diagnóstica',
+                icon=':material/house:'),
+        st.Page(page='visualizacao/preditiva.py', title='Análise Preditiva',
+                icon=':material/house:'),
+        st.Page(page='visualizacao/prescritiva.py', title='Análise Prescritiva',
+                icon=':material/house:'),
     ]
   }
 )
